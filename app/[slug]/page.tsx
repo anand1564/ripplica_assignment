@@ -37,12 +37,26 @@ export async function generateMetadata({
       type: "article",
       publishedTime: post.date,
       authors: [post.author],
+      images : [
+          {
+               url: `${baseUrl}/og-image.png`,
+               width: 1200,
+               height: 630
+          }
+      ]
+    },
+    twitter: {
+          card: "summary_large_image",    
+          title : post.title,
+          description : description,
+          images : [`${baseUrl}/og-image.png`]
     },
     alternates: {
       canonical: `${baseUrl}/${post.slug}`,
       languages: {
         en: `${baseUrl}/${post.slug}`,
         hi: `${baseUrl}/hi/${post.slug}`,
+        "x-default": `${baseUrl}/${post.slug}`
       },
     },
   };
@@ -54,33 +68,74 @@ export default async function Post({ params }: PageProps<"/[slug]">) {
 
   if (!post) notFound();
 
-  return (
-    <main className="site-shell article-page">
-      <header className="site-header">
-        <Link className="brand" href="/" aria-label="Back to Medium Tech home">
-          <span className="brand-mark">I</span>
-          Medium Tech
-        </Link>
-        <Link className="language-link" href={`/hi/${post.slug}`}>
-          हिंदी में पढ़ें <span aria-hidden="true">→</span>
-        </Link>
-      </header>
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.content.slice(0, 200),
+    datePublished: post.date,
+    author: {
+      "@type": "Person",
+      name: post.author,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Medium Tech",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${baseUrl}/${post.slug}`,
+    },
+    image: [`${baseUrl}/og-image.png`],
+  };
 
-      <article className="article-detail">
-        <Link className="back-link" href="/">
-          <span aria-hidden="true">←</span> All articles
-        </Link>
-        <p className="eyebrow">English edition</p>
-        <h1>{post.title}</h1>
-        <div className="article-byline">
-          <span>{post.author}</span>
-          <span aria-hidden="true">•</span>
-          <time dateTime={post.date}>{formatDate(post.date)}</time>
-        </div>
-        <div className="article-body">
-          <p>{post.content}</p>
-        </div>
-      </article>
-    </main>
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd),
+        }}
+      />
+
+      <main className="site-shell article-page">
+        <header className="site-header">
+          <Link
+            className="brand"
+            href="/"
+            aria-label="Back to Medium Tech home"
+          >
+            <span className="brand-mark">I</span>
+            Medium Tech
+          </Link>
+
+          <Link className="language-link" href={`/hi/${post.slug}`}>
+            हिंदी में पढ़ें <span aria-hidden="true">→</span>
+          </Link>
+        </header>
+
+        <article className="article-detail">
+          <Link className="back-link" href="/">
+            <span aria-hidden="true">←</span> All articles
+          </Link>
+
+          <p className="eyebrow">English edition</p>
+
+          <h1>{post.title}</h1>
+
+          <div className="article-byline">
+            <span>{post.author}</span>
+            <span aria-hidden="true">•</span>
+            <time dateTime={post.date}>
+              {formatDate(post.date)}
+            </time>
+          </div>
+
+          <div className="article-body">
+            <p>{post.content}</p>
+          </div>
+        </article>
+      </main>
+    </>
   );
 }

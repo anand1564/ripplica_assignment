@@ -37,5 +37,13 @@
           "author":"Emily Davis",
           "content": "CSS has evolved significantly over the years, offering developers a wide range of tools and techniques to create visually appealing and responsive web designs. Advanced CSS techniques include CSS Grid, Flexbox, CSS variables, and animations, which allow for more complex layouts and interactive user experiences.",
           "date": "2024-05-28"
+     },
+     {
+          "id" : 6,
+          "slug" : "deep learning-in-computer-vision",
+          "title" : "Deep Learning in Computer Vision",
+          "author" : "Michael Lee",
+          "content" : "Deep learning has revolutionized the field of computer vision, enabling machines to interpret and understand visual data with unprecedented accuracy. Techniques such as convolutional neural networks (CNNs) have been instrumental in advancing applications like image classification, object detection, and facial recognition, making deep learning a cornerstone of modern computer vision systems.",
+          "date" : "2024-05-20"    
      }
 ]
