@@ -40,7 +40,7 @@
      },
      {
           "id" : 6,
-          "slug" : "deep learning-in-computer-vision",
+          "slug" : "deep-learning-in-computer-vision",
           "title" : "Deep Learning in Computer Vision",
           "author" : "Michael Lee",
           "content" : "Deep learning has revolutionized the field of computer vision, enabling machines to interpret and understand visual data with unprecedented accuracy. Techniques such as convolutional neural networks (CNNs) have been instrumental in advancing applications like image classification, object detection, and facial recognition, making deep learning a cornerstone of modern computer vision systems.",
