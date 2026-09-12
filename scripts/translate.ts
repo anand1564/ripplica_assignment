@@ -141,3 +141,7 @@ async function main() {
 
   console.log("✓ posts-hi.json updated successfully");
 }
+main().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});
