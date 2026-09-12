@@ -7,6 +7,7 @@ export function generateStaticParams() {
           slug: post.slug
      }));
 }
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
  async function generateMetdata({params} : {params: {slug: string}}
 ) : Promise<Metadata>{
      const {slug} = params;
@@ -16,10 +17,29 @@ export function generateStaticParams() {
                title: "Post not found"
           }
      }
-     return{
-          title: post.title,
-          description: post.content.substring(0, 160)
+     const metadata : Metadata = {
+          title : post.title,
+          description : post.content.slice(0,200),
+          keywords : [post.title, post.author],
+          authors : [{name : post.author}],
+          creator : post.author,
+          openGraph : {
+               title : post.title,
+               description : post.content.slice(0,200),
+               url : `${baseUrl}/${post.slug}`,
+               type : "article",
+               publishedTime : post.date,
+               authors : [post.author]
+          },
+          alternates : {
+               canonical : `${baseUrl}/${post.slug}`,
+               languages : {
+                    "hi" : `${baseUrl}/hi/${post.slug}`,
+                    "en" : `${baseUrl}/${post.slug}`
+               }
+          }
      }
+     return metadata;
 }
 
 export default async function Post({ params }: { params: { slug: string } }) {
