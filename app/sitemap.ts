@@ -1,6 +1,7 @@
 
 import { MetadataRoute } from 'next';
 import posts from '@/data/posts.json';
+export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
