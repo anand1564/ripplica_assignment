@@ -1,0 +1,26 @@
+[
+     {
+          "id": 1,
+          "slug": "understanding-javascript-closures",
+          "title": "Understanding JavaScript Closures",
+          "author":"Jane Doe",
+          "content": "JavaScript closures are a fundamental concept that allows functions to access variables from an enclosing scope or environment even after that scope has finished executing. This feature is essential for creating private variables and functions, as well as for implementing callbacks and higher-order functions.",
+          "date": "2024-06-15"
+     },
+     {
+          "id": 2,
+          "slug": "guide-to-responsive-web-design",
+          "title": "A Guide to Responsive Web Design",
+          "author":"John Smith",
+          "content": "Responsive web design is an approach to web development that ensures websites look and function well on a variety of devices and screen sizes. By using flexible grids, media queries, and scalable images, developers can create websites that provide an optimal user experience across desktops, tablets, and smartphones.",
+          "date": "2024-06-10"               
+     },
+     {
+          "id": 3,
+          "slug": "introduction-to-machine-learning",
+          "title": "Introduction to Machine Learning",
+          "author":"Alice Johnson",
+          "content": "Machine learning is a subset of artificial intelligence that focuses on building systems that can learn from data and improve their performance over time without being explicitly programmed. It involves various algorithms and techniques, including supervised learning, unsupervised learning, and reinforcement learning.",
+          "date": "2024-06-05"
+     }
+]

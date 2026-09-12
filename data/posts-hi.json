@@ -1,0 +1,33 @@
+[
+  {
+    "slug": "demo",
+    "title": "Demo",
+    "author": "Anand Pandey",
+    "content": "This is a demo post for testing the translation functionality.",
+    "date": "2024-06-20"
+  },
+  {
+    "id": 1,
+    "slug": "understanding-javascript-closures",
+    "title": "JavaScript क्लोज़र को समझना",
+    "author": "Jane Doe",
+    "content": "JavaScript क्लोज़र एक मौलिक अवधारणा है जो फंक्शन को उस स्कोप या वातावरण से वेरिएबल्स तक पहुँचने की अनुमति देती है, भले ही वह स्कोप अपने निष्पादन को समाप्त कर चुका हो। यह सुविधा निजी वेरिएबल्स और फंक्शन बनाने के लिए, साथ ही कॉलबैक और उच्च-क्रम के फंक्शन लागू करने के लिए आवश्यक है।",
+    "date": "2024-06-15"
+  },
+  {
+    "id": 2,
+    "slug": "guide-to-responsive-web-design",
+    "title": "रेस्पॉन्सिव वेब डिज़ाइन के लिए एक गाइड",
+    "author": "John Smith",
+    "content": "रेस्पॉन्सिव वेब डिज़ाइन एक ऐसा दृष्टिकोण है जो वेब विकास में इस्तेमाल किया जाता है ताकि वेबसाइट्स विभिन्न उपकरणों और स्क्रीन आकारों पर अच्छी तरह दिखें और कार्य करें। लचीले ग्रिड्स, मीडिया क्वेरीज और स्केलेबल इमेजेज का उपयोग करके, डेवलपर्स ऐसी वेबसाइट्स बना सकते हैं जो डेस्कटॉप, टैबलेट और स्मार्टफोन पर इष्टतम उपयोगकर्ता अनुभव प्रदान करें।",
+    "date": "2024-06-10"
+  },
+  {
+    "id": 3,
+    "slug": "introduction-to-machine-learning",
+    "title": "मशीन लर्निंग का परिचय",
+    "author": "Alice Johnson",
+    "content": "Machine Learning, Artificial Intelligence का एक उपसमूह है जो डेटा से सीखने और बिना स्पष्ट प्रोग्रामिंग के समय के साथ अपने प्रदर्शन को सुधारने वाली प्रणालियाँ बनाने पर केंद्रित है। यह विभिन्न algorithms और techniques को शामिल करता है, जिनमें supervised learning, unsupervised learning, और reinforcement learning शामिल हैं।",
+    "date": "2024-06-05"
+  }
+]
