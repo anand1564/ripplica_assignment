@@ -1,26 +1,253 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ink: #1d2633;
+  --muted: #68717d;
+  --line: #dfe4e8;
+  --paper: #fbfaf7;
+  --accent: #be4d2d;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background: var(--paper);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+.site-shell {
+  width: min(100% - 40px, 960px);
+  margin: 0 auto;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 84px;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+}
+
+.header-label,
+.article-meta,
+.article-number,
+.article-byline,
+.eyebrow {
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.hero {
+  max-width: 720px;
+  padding: 105px 0 72px;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  color: var(--accent);
+}
+
+.hero h1,
+.article-detail h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -0.055em;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 8vw, 5.7rem);
+  line-height: 0.98;
+}
+
+.hero-copy {
+  max-width: 540px;
+  margin: 26px 0 0;
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.article-list {
+  display: grid;
+  gap: 18px;
+  margin-bottom: 72px;
+}
+
+.article-card {
+  display: grid;
+  grid-template-columns: 82px 1fr;
+  gap: 24px;
+  padding: 32px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.article-card:hover {
+  border-color: #c8d0d6;
+  box-shadow: 0 12px 28px rgb(29 38 51 / 8%);
+  transform: translateY(-2px);
+}
+
+.article-number {
+  margin: 6px 0 0;
+  color: var(--accent);
+}
+
+.article-meta {
+  margin: 0 0 10px;
+  letter-spacing: 0.05em;
+  text-transform: none;
+}
+
+.article-card h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.article-excerpt {
+  max-width: 650px;
+  margin: 13px 0 20px;
+  color: #4d5965;
+  line-height: 1.65;
+}
+
+.text-link,
+.language-link,
+.back-link {
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.text-link:hover,
+.language-link:hover,
+.back-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.article-page .site-header {
+  margin-bottom: 70px;
+}
+
+.article-detail {
+  width: min(100%, 720px);
+  margin: 0 auto;
+  padding-bottom: 100px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 64px;
+}
+
+.article-detail h1 {
+  font-size: clamp(2.7rem, 7vw, 5rem);
+  line-height: 1.03;
+}
+
+.article-byline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+  color: var(--muted);
+  letter-spacing: 0.03em;
+  text-transform: none;
+}
+
+.article-body {
+  margin-top: 48px;
+  padding-top: 42px;
+  border-top: 1px solid var(--line);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.25rem, 2.6vw, 1.55rem);
+  line-height: 1.7;
+}
+
+.article-body p {
+  margin: 0;
+}
+
+.hindi-article h1,
+.hindi-article .article-body {
+  letter-spacing: 0;
+}
+
+@media (max-width: 600px) {
+  .site-shell {
+    width: min(100% - 32px, 960px);
+  }
+
+  .header-label {
+    display: none;
+  }
+
+  .hero {
+    padding: 72px 0 54px;
+  }
+
+  .article-card {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 26px;
+  }
+
+  .article-number {
+    margin: 0;
+  }
+
+  .article-page .site-header {
+    margin-bottom: 48px;
+  }
+
+  .back-link {
+    margin-bottom: 46px;
+  }
 }
