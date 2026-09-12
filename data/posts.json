@@ -29,5 +29,13 @@
           "author":"Bob Brown",
           "content": "Quantum computing is an emerging field that leverages the principles of quantum mechanics to perform computations that are infeasible for classical computers. By utilizing qubits, superposition, and entanglement, quantum computers have the potential to solve complex problems in cryptography, optimization, and material science much faster than traditional computing methods.",
           "date": "2024-06-01"
+     },
+     {
+          "id": 5,
+          "slug": "advanced-css-techniques-for-modern-web-development",
+          "title": "Advanced CSS Techniques for Modern Web Development",
+          "author":"Emily Davis",
+          "content": "CSS has evolved significantly over the years, offering developers a wide range of tools and techniques to create visually appealing and responsive web designs. Advanced CSS techniques include CSS Grid, Flexbox, CSS variables, and animations, which allow for more complex layouts and interactive user experiences.",
+          "date": "2024-05-28"
      }
 ]
