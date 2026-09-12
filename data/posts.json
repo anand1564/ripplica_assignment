@@ -22,5 +22,12 @@
           "author":"Alice Johnson",
           "content": "Machine learning is a subset of artificial intelligence that focuses on building systems that can learn from data and improve their performance over time without being explicitly programmed. It involves various algorithms and techniques, including supervised learning, unsupervised learning, and reinforcement learning.",
           "date": "2024-06-05"
+     },{
+          "id": 4,
+          "slug": "exploring-the-future-of-quantum-computing",
+          "title": "Exploring the Future of Quantum Computing",
+          "author":"Bob Brown",
+          "content": "Quantum computing is an emerging field that leverages the principles of quantum mechanics to perform computations that are infeasible for classical computers. By utilizing qubits, superposition, and entanglement, quantum computers have the potential to solve complex problems in cryptography, optimization, and material science much faster than traditional computing methods.",
+          "date": "2024-06-01"
      }
 ]
